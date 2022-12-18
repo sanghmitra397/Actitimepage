@@ -1,0 +1,25 @@
+package Batch;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+public class B5 {
+	
+	@Test(dataProvider="bookticket")
+	public void customerdetails(String sourse,String destination)
+	{
+		System.out.println("Sourse details="+sourse +","+"destination Details"+destination);
+	}
+	
+	@DataProvider
+	public Object[][] bookticket()
+	{
+		Object[][] data=new Object[3][2];
+		data[0][0]="pune";
+		data[0][1]="Bamglore";
+		data[1][0]="pune";
+		data[1][1]="delhi";
+		data[2][0]="pune";
+		data[2][1]="maisur";
+		return data;
+	}
